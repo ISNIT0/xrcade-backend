@@ -8,6 +8,8 @@ import {
 
 import { postgresDefault, postgresConfig } from 'src/config/db'
 import { Profile } from './models';
+import { Game } from './models/Game.model';
+import { Rating } from './models/Rating.model';
 
 const url = process.env.DATABASE_URL || postgresDefault
 
@@ -18,6 +20,8 @@ const connectOptions = (): ConnectionOptions => ({
     logging: false,
     entities: [
         Profile,
+        Game,
+        Rating,
     ],
     cli: {
         entitiesDir: 'src/entity',

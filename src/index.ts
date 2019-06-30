@@ -13,6 +13,8 @@ import * as connectRedis from 'connect-redis';
 import * as session from 'express-session';
 import { passport } from './auth/passport';
 import { config } from './config';
+import { games } from './games';
+import { Game } from './models/Game.model';
 
 const app = express();
 
@@ -43,7 +45,21 @@ app.use('/', router);
 (async () => {
     await createConnection();
 
+    await updateGames();
+
     const port = process.env.PORT || 12180;
     app.listen(port);
     console.log('Listening on port', port);
 })().catch((e) => console.error(e.stack));
+
+async function updateGames() {
+    for (const game of games) {
+        let gameRow = await Game.findOne({ friendlyId: game.friendlyId });
+        if (!gameRow) {
+            gameRow = new Game();
+        }
+
+        Object.assign(gameRow, game);
+        await gameRow.save();
+    }
+}
