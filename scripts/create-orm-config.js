@@ -16,14 +16,14 @@ const { URL } = require('url')
       database: postgresUrl.pathname.replace('/', ''),
     }
     ormconfig.extra = {
-      ssl: process.env.DATABASE_USE_SSL === 'true',
+      ssl: process.env.DATABASE_USE_SSL !== 'false',
     }
     // DOCKER OR LOCAL TESTING
   } else {
     const host = process.env.POSTGRES_PORT_5432_TCP_ADDR || 'localhost'
     ormconfig.host = host
     ormconfig.extra = {
-      ssl: process.env.DATABASE_USE_SSL === 'true',
+      ssl: process.env.DATABASE_USE_SSL !== 'false',
     }
   }
 
