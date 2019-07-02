@@ -13,6 +13,6 @@ export class Game extends BaseEntity {
     @Column() public poster: string;
     @Column() public video: string;
     @Column() public description: string;
-    @Column('float') public rating: number;
+    @Column('float', { nullable: true }) public rating?: number;
     @OneToMany((type) => Rating, (r) => r.game) public ratings: Rating[];
 }
