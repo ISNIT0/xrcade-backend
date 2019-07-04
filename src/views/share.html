@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{game.title}} - XRcade</title>
+    <!-- Search Engine -->
+    <meta name="description" content="{{game.description}}">
+    <meta name="image" content="{{game.poster}}">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="{{game.title}} - XRcade">
+    <meta itemprop="description" content="{{game.description}}">
+    <meta itemprop="image" content="{{game.poster}}">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{game.title}} - XRcade">
+    <meta name="twitter:description" content="{{game.description}}">
+    <meta name="twitter:site" content="@jreeve0">
+    <meta name="twitter:image:src" content="{{game.poster}}">
+    <meta name="twitter:player" content="{{game.video}}">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="{{game.title}} - XRcade">
+    <meta name="og:description" content="{{game.description}}">
+    <meta name="og:image" content="{{game.poster}}">
+    <meta name="og:url" content="https://share.xrca.de/{{game.friendlyId}}">
+    <meta name="og:site_name" content="{{game.title}} - XRcade">
+    <meta name="og:video" content="{{game.video}}">
+    <meta name="fb:app_id" content="2213195365424902">
+    <meta name="og:type" content="website">
+</head>
+
+<body>
+
+</body>
+<script>
+    setTimeout(function () {
+        window.location = 'https://xrca.de/#viewing--{{game.friendlyId}}';
+    });
+</script>
+
+</html>

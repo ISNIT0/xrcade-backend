@@ -3,6 +3,7 @@ import * as asyncHandler from 'express-async-handler';
 import authRouter from './auth';
 import profileRouter from './profile';
 import gameRouter from './game';
+import shareRouter from './share';
 
 const router = Router();
 
@@ -16,6 +17,7 @@ router.get('/ruok',
 router.use('/auth', authRouter);
 router.use('/profile', profileRouter);
 router.use('/game', gameRouter);
+router.use('/share', shareRouter);
 
 export {
     router,
