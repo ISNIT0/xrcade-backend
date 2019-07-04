@@ -11,7 +11,8 @@ const router = Router();
 router.get('/all',
     asyncHandler(async (req, res) => {
         const games = await Game.find();
-        res.send(games);
+        const sortedGames = games.sort((a, b) => a.rating < b.rating ? -1 : 1);
+        res.send(sortedGames);
     }),
 );
 
