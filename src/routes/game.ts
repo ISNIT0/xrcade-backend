@@ -3,8 +3,7 @@ import * as asyncHandler from 'express-async-handler';
 import { Game } from 'src/models/Game.model';
 import { Rating } from 'src/models/Rating.model';
 import { makeValidateBody } from 'express-class-validator';
-import { IsOptional, IsNumber, IsInt, Min, Max } from 'class-validator';
-import { Profile } from 'src/models';
+import { IsInt, Min, Max } from 'class-validator';
 
 const router = Router();
 

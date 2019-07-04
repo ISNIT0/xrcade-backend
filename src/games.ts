@@ -5,6 +5,7 @@ export const games = [{
     poster: 'images/dance_tonite.png',
     description: 'Dance Tonite.',
     url: 'https://tonite.dance',
+    showTitle: false,
 }, {
     friendlyId: 'barista-express',
     title: 'Barista Express',
@@ -12,6 +13,7 @@ export const games = [{
     poster: 'images/barista_express.png',
     description: 'Virtually be a barista in your own cafe.',
     url: 'https://constructarca.de/construct-arcade/game/barista-express/game/',
+    showTitle: false,
 }, {
     friendlyId: 'pain-run',
     title: 'Pain Run',
