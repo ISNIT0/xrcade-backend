@@ -10,7 +10,7 @@ export class Game extends BaseEntity {
     @Column() public friendlyId: string;
     @Column() public title: string;
     @Column() public url: string;
-    @Column() public poster: string;
+    @Column({ nullable: true }) public poster?: string;
     @Column() public video: string;
     @Column() public description: string;
     @Column('float', { nullable: true }) public rating?: number;
