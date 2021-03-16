@@ -29,7 +29,7 @@ const postgresConfig = convict({
     useSsl: {
         doc: 'Flag whether postgres should use ssl or not',
         format: Boolean,
-        default: false,
+        default: true,
         env: 'DATABASE_USE_SSL',
     },
 })
