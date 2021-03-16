@@ -44,6 +44,7 @@ export async function createConnection() {
         }
         return connection
     } catch (e) {
+        console.error(`Failed to create connection. (probably not fatal)`, e);
         // We ignore since its likely that it caused because there was no connection
     }
     try {
