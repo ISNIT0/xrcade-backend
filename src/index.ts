@@ -43,14 +43,17 @@ app.use(bodyParser.json());
 app.use('/', router);
 
 (async () => {
+    console.info('Creating Connection');
     await createConnection();
 
+    console.info('Updating Games');
     await updateGames();
 
+    console.info('Starting Server');
     const port = process.env.PORT || 12180;
     app.listen(port);
     console.log('Listening on port', port);
-})().catch((e) => console.error(e.stack));
+})().catch((e) => console.error(e));
 
 async function updateGames() {
     for (const game of games) {
