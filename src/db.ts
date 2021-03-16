@@ -12,6 +12,7 @@ import { Game } from './models/Game.model';
 import { Rating } from './models/Rating.model';
 
 const url = process.env.DATABASE_URL || postgresDefault
+console.log({ url })
 
 const connectOptions = (): ConnectionOptions => ({
     type: 'postgres',
@@ -44,7 +45,6 @@ export async function createConnection() {
         }
         return connection
     } catch (e) {
-        console.error(`Failed to create connection. (probably not fatal)`, e);
         // We ignore since its likely that it caused because there was no connection
     }
     try {
