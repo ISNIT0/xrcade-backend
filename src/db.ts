@@ -29,12 +29,7 @@ const connectOptions = (): ConnectionOptions => ({
         migrationsDir: 'src/migration',
         subscribersDir: 'src/subscriber',
     },
-    extra: {
-        ssl: postgresConfig.get('useSsl') ? {
-            rejectUnauthorized: false,
-        } : false,
-        rejectUnauthorized: false,
-    },
+    ssl: { rejectUnauthorized: false },
 })
 
 export interface Connection extends TypeormConnection { }
