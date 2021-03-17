@@ -11,7 +11,7 @@ import { Profile } from './models';
 import { Game } from './models/Game.model';
 import { Rating } from './models/Rating.model';
 
-const url = process.env.DATABASE_URL || postgresDefault
+const url = (process.env.DATABASE_URL || postgresDefault) + '?sslmode=require';
 console.log({ url })
 
 const connectOptions = (): ConnectionOptions => ({
@@ -30,7 +30,9 @@ const connectOptions = (): ConnectionOptions => ({
         subscribersDir: 'src/subscriber',
     },
     extra: {
-        ssl: postgresConfig.get('useSsl') ? { rejectUnauthorized: false } : false,
+        ssl: postgresConfig.get('useSsl') ? {
+            rejectUnauthorized: false,
+        } : false,
     },
 })
 
