@@ -30,7 +30,7 @@ const connectOptions = (): ConnectionOptions => ({
         subscribersDir: 'src/subscriber',
     },
     extra: {
-        ssl: postgresConfig.get('useSsl'),
+        ssl: postgresConfig.get('useSsl') ? { rejectUnauthorized: false } : false,
     },
 })
 
