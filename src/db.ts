@@ -33,6 +33,7 @@ const connectOptions = (): ConnectionOptions => ({
         ssl: postgresConfig.get('useSsl') ? {
             rejectUnauthorized: false,
         } : false,
+        rejectUnauthorized: false,
     },
 })
 
