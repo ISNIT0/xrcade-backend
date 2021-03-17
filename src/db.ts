@@ -11,7 +11,7 @@ import { Profile } from './models';
 import { Game } from './models/Game.model';
 import { Rating } from './models/Rating.model';
 
-const url = (process.env.DATABASE_URL || postgresDefault) + '?sslmode=require';
+const url = (process.env.DATABASE_URL || postgresDefault);
 console.log({ url })
 
 const connectOptions = (): ConnectionOptions => ({
