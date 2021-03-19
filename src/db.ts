@@ -12,7 +12,6 @@ import { Game } from './models/Game.model';
 import { Rating } from './models/Rating.model';
 
 const url = (process.env.DATABASE_URL || postgresDefault);
-console.log({ url })
 
 const connectOptions = (): ConnectionOptions => ({
     type: 'postgres',
@@ -29,7 +28,9 @@ const connectOptions = (): ConnectionOptions => ({
         migrationsDir: 'src/migration',
         subscribersDir: 'src/subscriber',
     },
-    ssl: { rejectUnauthorized: false },
+    extra: {
+        ssl: postgresConfig.get('useSsl')
+    },
 })
 
 export interface Connection extends TypeormConnection { }
