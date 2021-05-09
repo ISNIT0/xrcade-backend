@@ -51,7 +51,7 @@
     "express-async-handler": "^1.1.4",
     "express-class-validator": "^1.0.3",
     "express-session": "^1.16.2",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.7",
     "ioredis": "^4.9.5",
     "morgan": "^1.9.1",
     "nyc": "^14.1.1",
