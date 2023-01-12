@@ -41,7 +41,7 @@
     "blue-tape": "^1.0.0",
     "body-parser": "^1.19.0",
     "boom": "^7.3.0",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "connect-redis": "^3.4.1",
     "convict": "^5.0.0",
     "copy-webpack-plugin": "^5.0.3",
